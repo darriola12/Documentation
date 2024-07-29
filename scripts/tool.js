@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".documentation-form");
     const button = document.querySelector("#button-reset");
     const note = document.getElementById("note");
+    
 
     form.addEventListener("change", updateNote);
     form.addEventListener("input", updateNote);
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
         note.innerHTML = '';
     });
+
+
 
     function updateNote() {
         let noteContent = '';
