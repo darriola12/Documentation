@@ -57,6 +57,7 @@ input[type="text"] {
 #div-container {
     display: flex;
     justify-content: center;
+    
 }
 
 button {
@@ -69,7 +70,13 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
 
 button:hover {
     background-color: #0056b3;
+}
+#button-copy{
+    margin-left: 100px;
+}
+
