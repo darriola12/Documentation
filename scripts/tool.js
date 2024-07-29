@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".documentation-form");
     const button = document.querySelector("#button-reset");
     const note = document.getElementById("note");
-    const copyButton = document.querySelector("#button-copy");
 
     form.addEventListener("change", updateNote);
     form.addEventListener("input", updateNote);
@@ -13,18 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
         note.innerHTML = '';
     });
 
-    copyButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        copyToClipboard(note.textContent);
-    });
-
     function updateNote() {
         let noteContent = '';
 
         // Iterate through all form inputs
         form.querySelectorAll('input').forEach(input => {
             if (input.type === 'radio' && input.checked) {
-                noteContent += `${input.closest('.form-div').querySelector('label').textContent} ${input.nextElementSibling.textContent.trim()}.<br>`;
+                noteContent += `${input.closest('.form-div').querySelector('label').textContent} ${input.nextSibling.textContent.trim()}.<br>`;
             } else if (input.type === 'text' && input.value) {
                 let labelText = input.closest('.form-div').querySelector('label').textContent;
                 let valueText = input.value;
@@ -48,13 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
         return value;
-    }
-
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Note copied to clipboard!');
-        }).catch(err => {
-            console.error('Error copying to clipboard: ', err);
-        });
     }
 });
