@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".documentation-form");
     const button = document.querySelector("#button-reset");
     const note = document.getElementById("note");
-    
+    const buttoCopy = document.querySelector("#button-copy");
+
 
     form.addEventListener("change", updateNote);
     form.addEventListener("input", updateNote);
@@ -13,7 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
         note.innerHTML = '';
     });
 
-
+    buttoCopy.addEventListener("click", (e) =>{
+        e.preventDefault();
+        copyToClipboard(note.textContent);
+    })
+    
 
     function updateNote() {
         let noteContent = '';
