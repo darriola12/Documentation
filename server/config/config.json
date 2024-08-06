@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "yourUsername",
+    "password": "yourPassword",
+    "database": "contact_form",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "yourUsername",
+    "password": "yourPassword",
+    "database": "contact_form_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "yourUsername",
+    "password": "yourPassword",
+    "database": "contact_form",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
